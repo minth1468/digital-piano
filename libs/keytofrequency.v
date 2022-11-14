@@ -28,6 +28,7 @@ input wire[4:0] notecode;
 
 
 /*****************************************************************************/
+/*
 output reg[13:0] countStart;
 always @ (posedge clk_5MHz)
 begin
@@ -76,16 +77,17 @@ begin
     else
         countStart = 0;
 end	
-
+*/
 /*****************************************************************************/
 // YOU SHOULD UNCOMMENT THIS FOR EXERCISE 2C
-// output wire[13:0] countStart;
-// blk_mem_gen_0 BRAMROM(
-//        .clka(clk_5MHz),
-//        .addra(notecode),
-//        .douta(countStart),
-//        .ena(1)
-//       );
+output wire[13:0] countStart;
+blk_mem_gen_0 BRAMROM(
+        .clka(clk_5MHz),
+        .addra(notecode),
+        .douta(countStart),
+        .ena(1)
+    );
    
 endmodule
+
 
